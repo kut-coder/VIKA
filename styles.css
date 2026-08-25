@@ -1258,7 +1258,7 @@ a.btn {
 .piece--hb-5 {
   grid-area: s5;
   width: 100%;
-  max-width: min(300px, 100%);
+  max-width: none;
   justify-self: stretch;
   transform: rotate(-0.8deg);
 }
@@ -1266,7 +1266,7 @@ a.btn {
 .piece--hb-wide1 {
   grid-area: wide1;
   width: 100%;
-  max-width: min(620px, 100%);
+  max-width: none;
   justify-self: stretch;
   transform: rotate(0.6deg);
 }
@@ -1274,7 +1274,7 @@ a.btn {
 .piece--hb-wide2 {
   grid-area: wide2;
   width: 100%;
-  max-width: min(320px, 100%);
+  max-width: none;
   justify-self: stretch;
   transform: rotate(-0.5deg);
 }
@@ -1313,22 +1313,25 @@ a.btn {
 }
 
 .piece--hb-hero .frame {
+  width: 100%;
   padding: 10px;
 }
 
-.piece--hb-wide1 .frame--contain img {
-  max-height: 320px;
-}
-
+.piece--hb-5 .frame--contain img,
+.piece--hb-wide1 .frame--contain img,
 .piece--hb-wide2 .frame--contain img {
-  max-height: 280px;
+  max-height: 270px;
+  min-height: 220px;
 }
 
-.piece--hb-hero .frame,
 .piece--hb-5 .frame,
 .piece--hb-wide1 .frame,
 .piece--hb-wide2 .frame {
   width: 100%;
+  min-height: 236px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .salon--hobbies .frame {
@@ -1778,14 +1781,13 @@ a.btn {
   }
 
   .salon--hobbies {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-      "hero hero"
-      "c b"
-      "s1 s2"
-      "s3 s4"
-      "s5 wide1"
-      "wide2 wide2";
+      "hero hero hero"
+      "c c b"
+      "s1 s2 s3"
+      "s4 s4 s4"
+      "s5 wide1 wide2";
   }
 
   .piece--hb-hero {
@@ -1813,15 +1815,14 @@ a.btn {
   .piece--hb-5 .frame--contain img,
   .piece--hb-wide1 .frame--contain img,
   .piece--hb-wide2 .frame--contain img {
-    max-height: 260px;
+    max-height: 200px;
+    min-height: 160px;
   }
 
-  .piece--hb-wide1 .frame--contain img {
-    max-height: 280px;
-  }
-
-  .piece--hb-wide2 .frame--contain img {
-    max-height: 240px;
+  .piece--hb-5 .frame,
+  .piece--hb-wide1 .frame,
+  .piece--hb-wide2 .frame {
+    min-height: 176px;
   }
 
   .piece--tilt-a,
