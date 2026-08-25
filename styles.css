@@ -1063,6 +1063,128 @@ a.btn {
   padding: 7px;
 }
 
+/* Friends salon */
+.hall--friends {
+  position: relative;
+  padding: 4.5rem 1.2rem 2rem;
+}
+
+.hall--friends .hall__rail {
+  margin-bottom: 1rem;
+}
+
+.hall--friends .hall__nav {
+  width: min(1180px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+}
+
+.salon--friends {
+  grid-template-columns: 1.28fr 0.78fr 0.78fr 1.28fr;
+  grid-template-areas:
+    "c hero hero b"
+    "s1 s2 wide wide"
+    "s3 s3 s4 s4";
+  gap: 0.55rem 0.45rem;
+  align-items: end;
+  justify-items: center;
+}
+
+.piece--fr-hero {
+  grid-area: hero;
+  max-width: 278px;
+  justify-self: center;
+  width: 100%;
+}
+
+.piece--fr-c {
+  grid-area: c;
+  transform: rotate(-1.4deg);
+  width: 100%;
+  max-width: none;
+  justify-self: stretch;
+  align-self: end;
+}
+
+.piece--fr-b {
+  grid-area: b;
+  transform: rotate(1.6deg);
+  width: 100%;
+  max-width: none;
+  justify-self: stretch;
+  align-self: end;
+}
+
+.piece--fr-1,
+.piece--fr-2 {
+  width: 100%;
+  max-width: 220px;
+  justify-self: center;
+}
+
+.piece--fr-1 { grid-area: s1; transform: rotate(-1.2deg); }
+.piece--fr-2 { grid-area: s2; transform: rotate(1.5deg); }
+
+.piece--fr-wide {
+  grid-area: wide;
+  width: 100%;
+  max-width: min(580px, 100%);
+  justify-self: stretch;
+  transform: rotate(-0.5deg);
+}
+
+.piece--fr-3 {
+  grid-area: s3;
+  width: 100%;
+  max-width: min(520px, 100%);
+  justify-self: stretch;
+  transform: rotate(1.2deg);
+}
+
+.piece--fr-4 {
+  grid-area: s4;
+  width: 100%;
+  max-width: min(520px, 100%);
+  justify-self: stretch;
+  transform: rotate(-1deg);
+}
+
+.piece--fr-hero img,
+.piece--fr-c img,
+.piece--fr-b img,
+.piece--fr-1 img,
+.piece--fr-2 img {
+  aspect-ratio: 4 / 5;
+  object-position: center 18%;
+}
+
+.piece--fr-wide .frame--contain img,
+.piece--fr-3 .frame--contain img,
+.piece--fr-4 .frame--contain img {
+  aspect-ratio: auto;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: contain;
+  object-position: center;
+  background: #1a140f;
+}
+
+.piece--fr-wide .frame,
+.piece--fr-3 .frame,
+.piece--fr-4 .frame {
+  width: 100%;
+}
+
+.salon--friends .frame {
+  padding: 8px;
+}
+
+.salon--friends .frame img {
+  padding: 7px;
+}
+
 /* Empty frames for later halls */
 .await {
   display: grid;
@@ -1449,6 +1571,32 @@ a.btn {
     max-height: 280px;
   }
 
+  .salon--friends {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "hero hero"
+      "c b"
+      "s1 s2"
+      "wide wide"
+      "s3 s3"
+      "s4 s4";
+  }
+
+  .piece--fr-c,
+  .piece--fr-b,
+  .piece--fr-3,
+  .piece--fr-4,
+  .piece--fr-wide {
+    justify-self: stretch;
+    max-width: none;
+  }
+
+  .piece--fr-wide .frame--contain img,
+  .piece--fr-3 .frame--contain img,
+  .piece--fr-4 .frame--contain img {
+    max-height: 300px;
+  }
+
   .piece--tilt-a,
   .piece--small,
   .piece--home,
@@ -1478,7 +1626,14 @@ a.btn {
   .piece--pe-5,
   .piece--pe-6,
   .piece--pe-7,
-  .piece--pe-8 {
+  .piece--pe-8,
+  .piece--fr-c,
+  .piece--fr-b,
+  .piece--fr-1,
+  .piece--fr-2,
+  .piece--fr-wide,
+  .piece--fr-3,
+  .piece--fr-4 {
     transform: none;
     margin-top: 0;
     margin-bottom: 0;
@@ -1509,7 +1664,14 @@ a.btn {
   .piece--pe-5,
   .piece--pe-6,
   .piece--pe-7,
-  .piece--pe-8 {
+  .piece--pe-8,
+  .piece--fr-c,
+  .piece--fr-b,
+  .piece--fr-1,
+  .piece--fr-2,
+  .piece--fr-wide,
+  .piece--fr-3,
+  .piece--fr-4 {
     max-width: none;
     justify-self: stretch;
   }
