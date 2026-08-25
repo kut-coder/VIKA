@@ -906,6 +906,163 @@ a.btn {
   background: #1a140f;
 }
 
+/* People salon */
+.hall--people {
+  position: relative;
+  padding: 4.5rem 1.2rem 2rem;
+}
+
+.hall--people .hall__rail {
+  margin-bottom: 1rem;
+}
+
+.hall--people .hall__nav {
+  width: min(1180px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+}
+
+.salon--people {
+  grid-template-columns: 1.28fr 0.78fr 0.78fr 1.28fr;
+  grid-template-areas:
+    "c hero hero b"
+    "s1 s2 gp gp"
+    "s4 s5 s6 ."
+    "fam fam fam8 fam8";
+  gap: 0.55rem 0.45rem;
+  align-items: end;
+  justify-items: center;
+}
+
+.piece--pe-hero {
+  grid-area: hero;
+  max-width: 278px;
+  justify-self: center;
+  width: 100%;
+}
+
+.piece--pe-b {
+  grid-area: b;
+  transform: rotate(1.6deg);
+  width: 100%;
+  max-width: none;
+  justify-self: stretch;
+  align-self: end;
+  margin-bottom: 0;
+}
+
+.piece--pe-c {
+  grid-area: c;
+  transform: rotate(-1.4deg);
+  width: 100%;
+  max-width: none;
+  justify-self: stretch;
+  align-self: end;
+  margin-bottom: 0;
+}
+
+.piece--pe-b .frame,
+.piece--pe-c .frame {
+  width: 100%;
+}
+
+.piece--pe-1,
+.piece--pe-2,
+.piece--pe-4,
+.piece--pe-5,
+.piece--pe-6 {
+  width: 100%;
+  max-width: 220px;
+  justify-self: center;
+}
+
+.piece--pe-3 {
+  grid-area: gp;
+  width: 100%;
+  max-width: min(580px, 100%);
+  justify-self: stretch;
+  transform: rotate(-0.6deg);
+}
+
+.piece--pe-7 {
+  grid-area: fam;
+  width: 100%;
+  max-width: min(520px, 100%);
+  justify-self: stretch;
+  transform: rotate(-1.1deg);
+}
+
+.piece--pe-8 {
+  grid-area: fam8;
+  width: 100%;
+  max-width: min(520px, 100%);
+  justify-self: stretch;
+  transform: rotate(1.7deg);
+}
+
+.piece--pe-1 { grid-area: s1; transform: rotate(-1.2deg); }
+.piece--pe-2 { grid-area: s2; transform: rotate(1.5deg); }
+.piece--pe-4 { grid-area: s4; transform: rotate(1.6deg); }
+.piece--pe-5 { grid-area: s5; transform: rotate(-1.4deg); }
+.piece--pe-6 { grid-area: s6; transform: rotate(1.3deg); }
+
+.piece--pe-hero img,
+.piece--pe-1 img,
+.piece--pe-2 img,
+.piece--pe-4 img,
+.piece--pe-5 img,
+.piece--pe-6 img {
+  aspect-ratio: 4 / 5;
+  object-position: center 18%;
+}
+
+.piece--pe-b .frame--contain img,
+.piece--pe-c .frame--contain img {
+  aspect-ratio: auto;
+  width: 100%;
+  height: auto;
+  max-height: 340px;
+  object-fit: contain;
+  object-position: center;
+  background: #1a140f;
+}
+
+.piece--pe-3 .frame--contain img {
+  aspect-ratio: auto;
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  object-fit: contain;
+  object-position: center;
+  background: #1a140f;
+}
+
+.piece--pe-7 .frame--contain img,
+.piece--pe-8 .frame--contain img {
+  aspect-ratio: auto;
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: contain;
+  object-position: center;
+  background: #1a140f;
+}
+
+.piece--pe-3 .frame,
+.piece--pe-7 .frame,
+.piece--pe-8 .frame {
+  width: 100%;
+}
+
+.salon--people .frame {
+  padding: 8px;
+}
+
+.salon--people .frame img {
+  padding: 7px;
+}
+
 /* Empty frames for later halls */
 .await {
   display: grid;
@@ -1259,6 +1416,39 @@ a.btn {
       "s5 s6";
   }
 
+  .salon--people {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "hero hero"
+      "c b"
+      "s1 s2"
+      "gp gp"
+      "s4 s5"
+      "s6 ."
+      "fam fam"
+      "fam8 fam8";
+  }
+
+  .piece--pe-b,
+  .piece--pe-c {
+    justify-self: stretch;
+    max-width: none;
+  }
+
+  .piece--pe-b .frame--contain img,
+  .piece--pe-c .frame--contain img {
+    max-height: 300px;
+  }
+
+  .piece--pe-3 .frame--contain img {
+    max-height: 320px;
+  }
+
+  .piece--pe-7 .frame--contain img,
+  .piece--pe-8 .frame--contain img {
+    max-height: 280px;
+  }
+
   .piece--tilt-a,
   .piece--small,
   .piece--home,
@@ -1278,7 +1468,17 @@ a.btn {
   .piece--sc-4,
   .piece--sc-5,
   .piece--sc-6,
-  .piece--sc-pride {
+  .piece--sc-pride,
+  .piece--pe-b,
+  .piece--pe-c,
+  .piece--pe-1,
+  .piece--pe-2,
+  .piece--pe-3,
+  .piece--pe-4,
+  .piece--pe-5,
+  .piece--pe-6,
+  .piece--pe-7,
+  .piece--pe-8 {
     transform: none;
     margin-top: 0;
     margin-bottom: 0;
@@ -1299,7 +1499,17 @@ a.btn {
   .piece--sc-4,
   .piece--sc-5,
   .piece--sc-6,
-  .piece--sc-pride {
+  .piece--sc-pride,
+  .piece--pe-b,
+  .piece--pe-c,
+  .piece--pe-1,
+  .piece--pe-2,
+  .piece--pe-3,
+  .piece--pe-4,
+  .piece--pe-5,
+  .piece--pe-6,
+  .piece--pe-7,
+  .piece--pe-8 {
     max-width: none;
     justify-self: stretch;
   }
