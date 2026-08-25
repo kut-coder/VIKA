@@ -804,6 +804,108 @@ a.btn {
   background: #efe6d6;
 }
 
+/* School salon */
+.hall--school {
+  position: relative;
+  padding: 4.5rem 1.2rem 2rem;
+}
+
+.hall--school .hall__rail {
+  margin-bottom: 1rem;
+}
+
+.hall--school .hall__nav {
+  width: min(1180px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+}
+
+.salon--school {
+  grid-template-columns: 1fr 1.05fr 1.05fr 1fr;
+  grid-template-areas:
+    "c hero hero b"
+    "s1 s2 s3 s4"
+    "s5 pride pride s6";
+  gap: 1rem 0.95rem;
+  align-items: end;
+  justify-items: center;
+}
+
+.piece--sc-hero {
+  grid-area: hero;
+  max-width: 320px;
+  justify-self: center;
+  width: 100%;
+}
+
+.piece--sc-b {
+  grid-area: b;
+  transform: rotate(1.8deg);
+  max-width: 220px;
+  width: 100%;
+  align-self: end;
+  margin-bottom: 0.6rem;
+}
+
+.piece--sc-c {
+  grid-area: c;
+  transform: rotate(-1.6deg);
+  max-width: 220px;
+  width: 100%;
+  align-self: end;
+  margin-bottom: 0.6rem;
+}
+
+.piece--sc-1,
+.piece--sc-2,
+.piece--sc-3,
+.piece--sc-4,
+.piece--sc-5,
+.piece--sc-6 {
+  width: 100%;
+  max-width: 220px;
+  justify-self: center;
+}
+
+.piece--sc-1 { grid-area: s1; transform: rotate(-1.3deg); }
+.piece--sc-2 { grid-area: s2; transform: rotate(1.4deg); }
+.piece--sc-3 { grid-area: s3; transform: rotate(-1.1deg); }
+.piece--sc-4 { grid-area: s4; transform: rotate(1.7deg); }
+.piece--sc-5 { grid-area: s5; transform: rotate(-1.5deg); }
+.piece--sc-6 { grid-area: s6; transform: rotate(1.2deg); }
+
+.piece--sc-pride {
+  grid-area: pride;
+  width: 100%;
+  max-width: 280px;
+  justify-self: center;
+  transform: rotate(0.8deg);
+}
+
+.piece--sc-hero img,
+.piece--sc-b img,
+.piece--sc-c img,
+.piece--sc-1 img,
+.piece--sc-3 img,
+.piece--sc-4 img,
+.piece--sc-5 img {
+  aspect-ratio: 4 / 5;
+  object-position: center 18%;
+}
+
+.piece--sc-2 .frame--contain img,
+.piece--sc-6 .frame--contain img,
+.piece--sc-pride .frame--contain img {
+  aspect-ratio: auto;
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: contain;
+  object-position: center;
+  background: #1a140f;
+}
+
 /* Empty frames for later halls */
 .await {
   display: grid;
@@ -1146,6 +1248,17 @@ a.btn {
       "pan corner";
   }
 
+  .salon--school {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "hero hero"
+      "c b"
+      "s1 s2"
+      "s3 s4"
+      "pride pride"
+      "s5 s6";
+  }
+
   .piece--tilt-a,
   .piece--small,
   .piece--home,
@@ -1156,7 +1269,16 @@ a.btn {
   .piece--ch-wide,
   .piece--ch-land,
   .piece--ch-pan,
-  .piece--ch-corner {
+  .piece--ch-corner,
+  .piece--sc-b,
+  .piece--sc-c,
+  .piece--sc-1,
+  .piece--sc-2,
+  .piece--sc-3,
+  .piece--sc-4,
+  .piece--sc-5,
+  .piece--sc-6,
+  .piece--sc-pride {
     transform: none;
     margin-top: 0;
     margin-bottom: 0;
@@ -1168,7 +1290,16 @@ a.btn {
   .piece--ch-pan,
   .piece--ch-corner,
   .piece--ch-b,
-  .piece--ch-c {
+  .piece--ch-c,
+  .piece--sc-b,
+  .piece--sc-c,
+  .piece--sc-1,
+  .piece--sc-2,
+  .piece--sc-3,
+  .piece--sc-4,
+  .piece--sc-5,
+  .piece--sc-6,
+  .piece--sc-pride {
     max-width: none;
     justify-self: stretch;
   }

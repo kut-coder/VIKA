@@ -2,7 +2,7 @@ const HALLS = [
   { id: "vestibule", title: "Вестибюль", nav: false },
   { id: "origin", title: "Происхождение", nav: true },
   { id: "childhood", title: "Детство", nav: true },
-  { id: "school", title: "Школа", nav: true },
+  { id: "school", title: "Школьные годы", nav: true },
   { id: "people", title: "Люди рядом", nav: true },
   { id: "friends", title: "С друзьями", nav: true },
   { id: "portraits", title: "Сквозь годы", nav: true },
