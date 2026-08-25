@@ -4,6 +4,7 @@ const HALLS = [
   { id: "childhood", title: "Детство", nav: true },
   { id: "school", title: "Школа", nav: true },
   { id: "people", title: "Люди рядом", nav: true },
+  { id: "friends", title: "С друзьями", nav: true },
   { id: "portraits", title: "Сквозь годы", nav: true },
   { id: "dreams", title: "Мечты и выборы", nav: true },
   { id: "chapter", title: "Глава, которая начинается", nav: true },
