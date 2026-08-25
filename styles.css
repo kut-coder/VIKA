@@ -380,7 +380,7 @@ a.btn {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: saturate(0.6) contrast(1.02) brightness(0.42);
+  filter: saturate(0.62) contrast(1.02) brightness(0.52);
   transform: scale(1.06);
   animation: slowZoom 18s ease-in-out alternate infinite;
 }
@@ -390,8 +390,8 @@ a.btn {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at center, rgba(12, 9, 8, 0.28) 0%, rgba(12, 9, 8, 0.62) 65%, rgba(12, 9, 8, 0.88) 100%),
-    linear-gradient(180deg, rgba(12, 9, 8, 0.32), rgba(12, 9, 8, 0.68) 70%, #0c0908);
+    radial-gradient(ellipse at center, rgba(12, 9, 8, 0.18) 0%, rgba(12, 9, 8, 0.48) 65%, rgba(12, 9, 8, 0.78) 100%),
+    linear-gradient(180deg, rgba(12, 9, 8, 0.22), rgba(12, 9, 8, 0.55) 70%, #0c0908);
 }
 
 @keyframes slowZoom {
