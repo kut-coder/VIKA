@@ -1329,6 +1329,32 @@ a.btn {
   flex: 1;
 }
 
+.gate .await__frame--photo {
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  display: block;
+}
+
+.gate .await__frame--photo .frame {
+  width: 100%;
+  min-height: 280px;
+  height: 100%;
+}
+
+.gate .await__frame--photo .frame img {
+  width: 100%;
+  max-height: 360px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+.gate--waiting .await__frame--empty > span {
+  font-size: calc(1.15rem + 3pt);
+}
+
 .plaque {
   display: grid;
   place-items: center;

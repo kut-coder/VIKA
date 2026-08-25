@@ -378,60 +378,15 @@
 
       <footer class="hall__nav">
         <button type="button" class="btn btn--ghost" data-go="people">Назад</button>
-        <button type="button" class="btn btn--primary" data-go="portraits">Дальше по залам</button>
+        <button type="button" class="btn btn--primary" data-go="chapter">Дальше по залам</button>
       </footer>
-    </section>
-
-    <section class="hall" data-hall="portraits" aria-label="Сквозь годы" hidden>
-      <div class="spot" aria-hidden="true"></div>
-      <div class="hall__inner">
-        <header class="hall__header">
-          <p class="hall__index">Зал VI</p>
-          <h2 class="hall__title">Сквозь годы</h2>
-        </header>
-        <div class="await await--row">
-          <div class="await__frame"><span>Малышка</span></div>
-          <div class="await__frame"><span>Ребёнок</span></div>
-          <div class="await__frame"><span>Школьница</span></div>
-          <div class="await__frame"><span>Подросток</span></div>
-          <div class="await__frame"><span>Выпускница</span></div>
-          <div class="await__frame await__frame--now"><span>18</span></div>
-        </div>
-        <footer class="hall__nav">
-          <button type="button" class="btn btn--ghost" data-go="friends">Назад</button>
-          <button type="button" class="btn btn--primary" data-go="dreams">Дальше по залам</button>
-        </footer>
-      </div>
-    </section>
-
-    <section class="hall" data-hall="dreams" aria-label="Мечты и выборы" hidden>
-      <div class="spot" aria-hidden="true"></div>
-      <div class="hall__inner">
-        <header class="hall__header">
-          <p class="hall__index">Зал VII</p>
-          <h2 class="hall__title">Мечты и выборы</h2>
-        </header>
-        <article class="ticket-card">
-          <p class="ticket-card__kicker">Экспонат</p>
-          <h3>Билет в следующую главу</h3>
-          <p>История. Не только предмет — способ видеть людей и время.</p>
-        </article>
-        <div class="await await--2">
-          <div class="await__frame"><span>То, что было её</span></div>
-          <div class="await__frame"><span>Шаг к университету</span></div>
-        </div>
-        <footer class="hall__nav">
-          <button type="button" class="btn btn--ghost" data-go="portraits">Назад</button>
-          <button type="button" class="btn btn--primary" data-go="chapter">Дальше по залам</button>
-        </footer>
-      </div>
     </section>
 
     <section class="hall hall--chapter" data-hall="chapter" aria-label="Глава, которая начинается" hidden>
       <div class="spot" aria-hidden="true"></div>
       <div class="hall__inner">
         <header class="hall__header">
-          <p class="hall__index">Зал VIII</p>
+          <p class="hall__index">Зал VI</p>
           <h2 class="hall__title">Глава, которая начинается</h2>
         </header>
 
@@ -439,7 +394,11 @@
           <article class="gate">
             <p class="gate__date">26 августа</p>
             <h3>Совершеннолетие</h3>
-            <div class="await__frame"><span>Портрет «сейчас»</span></div>
+            <div class="await__frame await__frame--photo">
+              <button type="button" class="frame" data-lightbox="photos/chapter/20260826_001821.jpg" aria-label="Открыть фото">
+                <img src="photos/chapter/20260826_001821.jpg" alt="Вика — совершеннолетие" />
+              </button>
+            </div>
           </article>
           <div class="plaque">
             Зал в процессе формирования.<br />Главный экспонат уже вошёл.
@@ -455,7 +414,7 @@
         </div>
 
         <footer class="hall__nav">
-          <button type="button" class="btn btn--ghost" data-go="dreams">Назад</button>
+          <button type="button" class="btn btn--ghost" data-go="friends">Назад</button>
           <button type="button" class="btn btn--primary" data-go="foryou">Дальше по залам</button>
         </footer>
       </div>
@@ -465,7 +424,7 @@
       <div class="spot" aria-hidden="true"></div>
       <div class="hall__inner hall__inner--narrow">
         <header class="hall__header">
-          <p class="hall__index">Зал IX</p>
+          <p class="hall__index">Зал VII</p>
           <h2 class="hall__title">Для тебя</h2>
         </header>
 
@@ -484,7 +443,7 @@
 
         <aside class="future-mail">
           <h3>Письмо себе в будущее</h3>
-          <p>Здесь ты можешь написать письмо той Вике, которой ещё только предстоит стать. Через годы приятно и неожиданно будет получить такое письмо от себя 18-летней.</p>
+          <p>Здесь ты можешь написать письмо той Вике, которой ещё только предстоит стать.<br />Через годы приятно и неожиданно будет получить такое письмо от себя 18-летней.</p>
           <a class="btn btn--secondary" href="https://www.futureme.org" target="_blank" rel="noopener noreferrer">Оставить письмо себе</a>
         </aside>
 
