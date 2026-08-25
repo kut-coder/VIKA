@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Билет — Музей одной девочки</title>
+  <style>
+    @page { size: A6 portrait; margin: 12mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #ece7df;
+      font-family: "Georgia", "Times New Roman", serif;
+      color: #2a2118;
+    }
+    .ticket {
+      width: 105mm;
+      min-height: 148mm;
+      padding: 14mm 12mm;
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(201, 165, 106, 0.18), transparent 55%),
+        linear-gradient(165deg, #f7f1e6 0%, #ebe2d3 100%);
+      border: 1px solid #c9a56a;
+      box-shadow: 0 18px 40px rgba(42, 33, 24, 0.18);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10mm;
+    }
+    .eyebrow {
+      margin: 0;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #6b4e2e;
+    }
+    h1 {
+      margin: 6px 0 0;
+      font-size: 22px;
+      font-weight: normal;
+      line-height: 1.25;
+      letter-spacing: 0.02em;
+    }
+    .date {
+      margin: 8px 0 0;
+      font-size: 12px;
+      color: #5a4a3a;
+    }
+    .qr {
+      width: 48mm;
+      height: 48mm;
+      padding: 3mm;
+      background: #fff;
+      border: 1px solid #d8c7a8;
+    }
+    .qr img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .hint {
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.45;
+      color: #5a4a3a;
+      max-width: 70mm;
+    }
+    .url {
+      margin: 0;
+      font-size: 9px;
+      word-break: break-all;
+      color: #8a7355;
+    }
+    .actions {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      gap: 8px;
+    }
+    .actions button {
+      border: 1px solid #6b4e2e;
+      background: #2a2118;
+      color: #f7f1e6;
+      padding: 10px 14px;
+      font: inherit;
+      cursor: pointer;
+    }
+    @media print {
+      body { background: #fff; }
+      .ticket { box-shadow: none; }
+      .actions { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="actions">
+    <button type="button" onclick="window.print()">Печать</button>
+  </div>
+
+  <article class="ticket">
+    <header>
+      <p class="eyebrow">Пригласительный билет</p>
+      <h1>Музей<br />одной девочки</h1>
+      <p class="date">Специальное открытие · 26 августа 2026</p>
+    </header>
+
+    <div class="qr">
+      <img src="qr-museum-vika.png" alt="QR-код входа в музей" width="600" height="600" />
+    </div>
+
+    <footer>
+      <p class="hint">Наведите камеру телефона — откроется вход в музей.</p>
+      <p class="url">kut-coder.github.io/VIKA</p>
+    </footer>
+  </article>
+</body>
+</html>

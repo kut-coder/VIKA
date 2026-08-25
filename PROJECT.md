@@ -156,7 +156,8 @@
 
 1. Бумажный билет (приглашение в музей)
 2. На билете QR → ссылка GitHub Pages  
-   Пример вида: `https://username.github.io/repo-name/`
+   **Опубликовано:** https://kut-coder.github.io/VIKA/  
+   QR для печати: `ticket/qr-museum-vika.png` / `ticket/print.html`
 3. Сначала опубликовать и проверить ссылку с телефона, потом печатать QR
 4. Вечер: вместе пройти часть залов; «Сквозь годы» и «Для тебя» — тише / интимнее
 
@@ -224,8 +225,8 @@
 - [x] Зал «Детство»: фото вписаны (`photos/childhood/`)
 - [ ] Реальные фото и тексты остальных залов
 - [ ] Письмо мамы
-- [ ] Публикация на GitHub Pages
-- [ ] Билет + QR
+- [x] Публикация на GitHub Pages — https://kut-coder.github.io/VIKA/
+- [x] Билет + QR — `ticket/print.html`, `ticket/qr-museum-vika.png`
 
 ---
 
