@@ -132,11 +132,37 @@ function closePlan() {
 
 document.addEventListener("click", (event) => {
   const goBtn = event.target.closest("[data-go]");
-  if (goBtn) {
-    event.preventDefault();
-    goTo(goBtn.dataset.go);
+  if (!goBtn) return;
+  event.preventDefault();
+
+  if (goBtn.classList.contains("door-btn")) {
+    openDoorAndEnter(goBtn);
+    return;
   }
+
+  goTo(goBtn.dataset.go);
 });
+
+function openDoorAndEnter(btn) {
+  if (btn.classList.contains("is-opening") || transitioning) return;
+
+  const target = btn.dataset.go;
+  if (prefersReducedMotion()) {
+    goTo(target);
+    return;
+  }
+
+  btn.classList.add("is-opening");
+  btn.setAttribute("aria-busy", "true");
+
+  window.setTimeout(() => {
+    goTo(target);
+    window.setTimeout(() => {
+      btn.classList.remove("is-opening");
+      btn.removeAttribute("aria-busy");
+    }, TRANSITION_MS + 80);
+  }, 780);
+}
 
 btnPlan.addEventListener("click", () => {
   if (plan.hidden) openPlan();
