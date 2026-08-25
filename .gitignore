@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.log
+.vscode/
+.idea/
+museum-tools/
+
+# исходники фото — на сайт идут только копии из photos/
+Детство/
+Школа/
