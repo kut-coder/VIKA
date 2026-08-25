@@ -152,37 +152,122 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closePlan();
     closeLightbox();
+    return;
+  }
+  if (lightbox.hidden) return;
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    showLightboxAt(lightboxIndex - 1);
+  } else if (event.key === "ArrowRight") {
+    event.preventDefault();
+    showLightboxAt(lightboxIndex + 1);
   }
 });
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
 const lightboxClose = document.getElementById("lightbox-close");
+const lightboxPrev = document.getElementById("lightbox-prev");
+const lightboxNext = document.getElementById("lightbox-next");
+const lightboxCounter = document.getElementById("lightbox-counter");
 
-function openLightbox(src, alt) {
-  lightboxImage.src = src;
-  lightboxImage.alt = alt || "";
+let lightboxItems = [];
+let lightboxIndex = 0;
+
+function collectHallLightboxItems(frame) {
+  const hall = frame.closest("[data-hall]");
+  if (!hall) return [];
+  return Array.from(hall.querySelectorAll("[data-lightbox]")).map((el) => {
+    const img = el.querySelector("img");
+    return {
+      src: el.dataset.lightbox,
+      alt: img ? img.alt : "",
+    };
+  });
+}
+
+function updateLightboxChrome() {
+  const total = lightboxItems.length;
+  const multi = total > 1;
+  lightboxPrev.hidden = !multi;
+  lightboxNext.hidden = !multi;
+  lightboxCounter.hidden = !multi;
+  if (multi) {
+    lightboxCounter.textContent = `${lightboxIndex + 1} / ${total}`;
+  }
+}
+
+function showLightboxAt(index) {
+  if (!lightboxItems.length) return;
+  const total = lightboxItems.length;
+  lightboxIndex = ((index % total) + total) % total;
+  const item = lightboxItems[lightboxIndex];
+  lightboxImage.src = item.src;
+  lightboxImage.alt = item.alt || "";
+  updateLightboxChrome();
+}
+
+function openLightboxFromFrame(frame) {
+  lightboxItems = collectHallLightboxItems(frame);
+  const start = lightboxItems.findIndex((item) => item.src === frame.dataset.lightbox);
+  lightboxIndex = start >= 0 ? start : 0;
+  showLightboxAt(lightboxIndex);
   lightbox.hidden = false;
 }
 
 function closeLightbox() {
   lightbox.hidden = true;
   lightboxImage.src = "";
+  lightboxItems = [];
+  lightboxIndex = 0;
+  lightboxCounter.hidden = true;
+  lightboxPrev.hidden = true;
+  lightboxNext.hidden = true;
 }
 
 document.addEventListener("click", (event) => {
   const frame = event.target.closest("[data-lightbox]");
   if (frame) {
     event.preventDefault();
-    const img = frame.querySelector("img");
-    openLightbox(frame.dataset.lightbox, img ? img.alt : "");
+    openLightboxFromFrame(frame);
   }
 });
 
 lightboxClose.addEventListener("click", closeLightbox);
+lightboxPrev.addEventListener("click", (event) => {
+  event.stopPropagation();
+  showLightboxAt(lightboxIndex - 1);
+});
+lightboxNext.addEventListener("click", (event) => {
+  event.stopPropagation();
+  showLightboxAt(lightboxIndex + 1);
+});
 lightbox.addEventListener("click", (event) => {
   if (event.target === lightbox) closeLightbox();
 });
+
+let touchStartX = 0;
+lightbox.addEventListener(
+  "touchstart",
+  (event) => {
+    if (event.changedTouches.length === 1) {
+      touchStartX = event.changedTouches[0].clientX;
+    }
+  },
+  { passive: true }
+);
+lightbox.addEventListener(
+  "touchend",
+  (event) => {
+    if (lightbox.hidden || lightboxItems.length < 2) return;
+    if (event.changedTouches.length !== 1) return;
+    const delta = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(delta) < 50) return;
+    if (delta > 0) showLightboxAt(lightboxIndex - 1);
+    else showLightboxAt(lightboxIndex + 1);
+  },
+  { passive: true }
+);
 
 buildPlan();
 goTo("vestibule", { instant: true });
