@@ -928,7 +928,7 @@ a.btn {
   grid-template-areas:
     "c hero hero b"
     "s1 s2 gp gp"
-    "s4 s5 s6 ."
+    "s4 s5 s6 s7"
     "fam fam fam8 fam8";
   gap: 0.55rem 0.45rem;
   align-items: end;
@@ -971,7 +971,8 @@ a.btn {
 .piece--pe-2,
 .piece--pe-4,
 .piece--pe-5,
-.piece--pe-6 {
+.piece--pe-6,
+.piece--pe-9 {
   width: 100%;
   max-width: 220px;
   justify-self: center;
@@ -1006,13 +1007,15 @@ a.btn {
 .piece--pe-4 { grid-area: s4; transform: rotate(1.6deg); }
 .piece--pe-5 { grid-area: s5; transform: rotate(-1.4deg); }
 .piece--pe-6 { grid-area: s6; transform: rotate(1.3deg); }
+.piece--pe-9 { grid-area: s7; transform: rotate(-1.1deg); }
 
 .piece--pe-hero img,
 .piece--pe-1 img,
 .piece--pe-2 img,
 .piece--pe-4 img,
 .piece--pe-5 img,
-.piece--pe-6 img {
+.piece--pe-6 img,
+.piece--pe-9 img {
   aspect-ratio: 4 / 5;
   object-position: center 18%;
 }
@@ -1205,7 +1208,7 @@ a.btn {
 .salon--hobbies {
   grid-template-columns: repeat(12, 1fr);
   grid-template-areas:
-    ". . c c hero hero hero hero hero hero b b"
+    "c c c hero hero hero hero hero hero b b b"
     "s1 s1 s1 s2 s2 s2 s3 s3 s3 s4 s4 s4"
     "s5 s5 s5 s5 wide1 wide1 wide1 wide1 wide2 wide2 wide2 wide2";
   gap: 0.55rem 0.45rem;
@@ -1227,7 +1230,7 @@ a.btn {
   grid-area: c;
   transform: rotate(-1.4deg);
   width: 100%;
-  max-width: 215px;
+  max-width: 270px;
   justify-self: center;
   align-self: end;
 }
@@ -1236,7 +1239,7 @@ a.btn {
   grid-area: b;
   transform: rotate(1.6deg);
   width: 100%;
-  max-width: 215px;
+  max-width: 270px;
   justify-self: center;
   align-self: end;
 }
@@ -1258,24 +1261,24 @@ a.btn {
 .piece--hb-5 {
   grid-area: s5;
   width: 100%;
-  max-width: none;
-  justify-self: stretch;
+  max-width: min(340px, 100%);
+  justify-self: center;
   transform: rotate(-0.8deg);
 }
 
 .piece--hb-wide1 {
   grid-area: wide1;
   width: 100%;
-  max-width: none;
-  justify-self: stretch;
+  max-width: min(340px, 100%);
+  justify-self: center;
   transform: rotate(0.6deg);
 }
 
 .piece--hb-wide2 {
   grid-area: wide2;
   width: 100%;
-  max-width: none;
-  justify-self: stretch;
+  max-width: min(340px, 100%);
+  justify-self: center;
   transform: rotate(-0.5deg);
 }
 
@@ -1292,7 +1295,7 @@ a.btn {
 
 .piece--hb-c img,
 .piece--hb-b img {
-  max-height: 268px;
+  max-height: 340px;
 }
 
 .piece--hb-hero .frame--contain img,
@@ -1320,15 +1323,15 @@ a.btn {
 .piece--hb-5 .frame--contain img,
 .piece--hb-wide1 .frame--contain img,
 .piece--hb-wide2 .frame--contain img {
-  max-height: 270px;
-  min-height: 220px;
+  max-height: 280px;
+  min-height: 0;
 }
 
 .piece--hb-5 .frame,
 .piece--hb-wide1 .frame,
 .piece--hb-wide2 .frame {
   width: 100%;
-  min-height: 236px;
+  min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1526,16 +1529,30 @@ a.btn {
   justify-self: center;
 }
 
-.hall--chapter .hall__header {
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-  text-align: center;
-  max-width: 42rem;
+.hall--chapter {
+  position: relative;
+  padding: 4.5rem 1.2rem 2rem;
+}
+
+.hall--chapter .hall__rail {
+  margin-bottom: 1rem;
 }
 
 .hall--chapter .hall__nav {
+  width: min(980px, 100%);
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 2.5rem;
+}
+
+.hall--foryou {
+  position: relative;
+  padding: 4.5rem 1.2rem 2rem;
+}
+
+.hall--foryou .hall__rail {
+  width: min(680px, 100%);
+  margin-bottom: 1.5rem;
 }
 
 .letter {
@@ -1590,6 +1607,16 @@ a.btn {
 .future-mail p {
   margin: 0 0 0.8rem;
   color: var(--muted);
+}
+
+.hall-closing {
+  margin: 2.4rem 0 0;
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.45;
+  color: var(--gold-2);
 }
 
 .hint {
@@ -1729,7 +1756,7 @@ a.btn {
       "s1 s2"
       "gp gp"
       "s4 s5"
-      "s6 ."
+      "s6 s7"
       "fam fam"
       "fam8 fam8";
   }
@@ -1797,32 +1824,30 @@ a.btn {
 
   .piece--hb-c,
   .piece--hb-b {
-    max-width: min(200px, 46vw);
+    max-width: min(240px, 42vw);
     justify-self: center;
   }
 
   .piece--hb-5,
   .piece--hb-wide1,
   .piece--hb-wide2 {
-    justify-self: stretch;
-    max-width: none;
+    max-width: min(300px, 42vw);
+    justify-self: center;
   }
 
   .piece--hb-hero .frame--contain img {
     max-height: 320px;
   }
 
+  .piece--hb-c img,
+  .piece--hb-b img {
+    max-height: 300px;
+  }
+
   .piece--hb-5 .frame--contain img,
   .piece--hb-wide1 .frame--contain img,
   .piece--hb-wide2 .frame--contain img {
-    max-height: 200px;
-    min-height: 160px;
-  }
-
-  .piece--hb-5 .frame,
-  .piece--hb-wide1 .frame,
-  .piece--hb-wide2 .frame {
-    min-height: 176px;
+    max-height: 220px;
   }
 
   .piece--tilt-a,
@@ -1853,6 +1878,7 @@ a.btn {
   .piece--pe-4,
   .piece--pe-5,
   .piece--pe-6,
+  .piece--pe-9,
   .piece--pe-7,
   .piece--pe-8,
   .piece--fr-c,
@@ -1891,6 +1917,7 @@ a.btn {
   .piece--pe-4,
   .piece--pe-5,
   .piece--pe-6,
+  .piece--pe-9,
   .piece--pe-7,
   .piece--pe-8,
   .piece--fr-c,

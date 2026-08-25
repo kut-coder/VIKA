@@ -300,6 +300,12 @@
           </button>
         </figure>
 
+        <figure class="piece piece--pe-9">
+          <button type="button" class="frame" data-lightbox="photos/people/20191012_223201.jpg" aria-label="Открыть фото">
+            <img src="photos/people/20191012_223201.jpg" alt="Вика с котёнком" />
+          </button>
+        </figure>
+
         <figure class="piece piece--pe-7">
           <button type="button" class="frame frame--contain" data-lightbox="photos/people/IMG-20200107-WA0004.jpg" aria-label="Открыть фото">
             <img src="photos/people/IMG-20200107-WA0004.jpg" alt="Семья" />
@@ -459,13 +465,12 @@
 
     <section class="hall hall--chapter" data-hall="chapter" aria-label="Глава, которая начинается" hidden>
       <div class="spot" aria-hidden="true"></div>
-      <div class="hall__inner">
-        <header class="hall__header">
-          <p class="hall__index">Зал VII</p>
-          <h2 class="hall__title">Глава, которая начинается</h2>
-        </header>
+      <div class="hall__rail">
+        <p>Зал VII</p>
+        <h2>Глава, которая начинается</h2>
+      </div>
 
-        <div class="gates">
+      <div class="gates">
           <article class="gate">
             <p class="gate__date">26 августа</p>
             <h3>Совершеннолетие</h3>
@@ -488,21 +493,20 @@
           </article>
         </div>
 
-        <footer class="hall__nav">
-          <button type="button" class="btn btn--ghost" data-go="hobbies">Назад</button>
-          <button type="button" class="btn btn--primary" data-go="foryou">Дальше по залам</button>
-        </footer>
-      </div>
+      <footer class="hall__nav">
+        <button type="button" class="btn btn--ghost" data-go="hobbies">Назад</button>
+        <button type="button" class="btn btn--primary" data-go="foryou">Дальше по залам</button>
+      </footer>
     </section>
 
     <section class="hall hall--foryou" data-hall="foryou" aria-label="Для тебя" hidden>
       <div class="spot" aria-hidden="true"></div>
-      <div class="hall__inner hall__inner--narrow">
-        <header class="hall__header">
-          <p class="hall__index">Зал VIII</p>
-          <h2 class="hall__title">Для тебя</h2>
-        </header>
+      <div class="hall__rail">
+        <p>Зал VIII</p>
+        <h2>Для тебя</h2>
+      </div>
 
+      <div class="hall__inner hall__inner--narrow">
         <article class="letter">
           <p class="letter__to">Любимая доченька, Викуля,</p>
           <div class="letter__body">
@@ -521,6 +525,8 @@
           <p>Здесь ты можешь написать письмо той Вике, которой ещё только предстоит стать.<br />Через годы приятно и неожиданно будет получить такое письмо от себя 18-летней.</p>
           <a class="btn btn--secondary" href="https://www.futureme.org" target="_blank" rel="noopener noreferrer">Оставить письмо себе</a>
         </aside>
+
+        <p class="hall-closing">Пиши историю своей жизни дальше, также уверенно и по-своему.</p>
 
         <footer class="hall__nav">
           <button type="button" class="btn btn--ghost" data-go="chapter">Назад</button>
